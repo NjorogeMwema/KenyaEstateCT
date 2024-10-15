@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       domain='dev-6cf6s5cr3rb52zja.us.auth0.com'
       clientId='4K6rRtkrbPy2Pcouuv5L7zPBuzoxsYiY'
       authorizationParams={{
-        redirect_uri: "http://localhost:5173"
+        redirect_uri: "https://kenyaestate-ct.vercel.app/"
       }}
       audience="http://localhost:8000"
       scope="openid profile email"
