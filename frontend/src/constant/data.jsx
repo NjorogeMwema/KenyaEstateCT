@@ -171,7 +171,7 @@ export const BLOGS = [
   {
     title: "Tranquil Terrace Tranquility Haven",
     image: blog1,
-    category: "Cottage",
+    category: "Apartment",
   },
   {
     title: "Oceanview Oasis Serenity Escape",
@@ -199,7 +199,7 @@ export const FOOTER_LINKS = [
       "About Us",
       "Latest Items",
       "Hot Offers",
-      "Popular descriptionigns",
+      "Popular descriptions",
       "FAQ",
       "Privacy Policy",
     ],

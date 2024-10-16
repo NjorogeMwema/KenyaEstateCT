@@ -56,7 +56,7 @@ export const getAllResidencies = asyncHandler(async (req, res) => {
       createdAt: "desc",
     },
   });
-  res.send(residencies);
+  res.send('All residencies');
 });
 
 // get document/residency by id
@@ -67,7 +67,46 @@ export const getResidency = asyncHandler(async (req, res) => {
     const residency = await prisma.residency.findUnique({
       where: { id },
     });
-    res.send(residency);
+    res.send('Residency');
+  } catch (err) {
+    throw new Error(err.message);
+  }
+});
+
+// update document/residency by id
+export const updateResidency = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const { title, description, price, address, city, country, image, facilities } = req.body;
+
+  try {
+    const updatedResidency = await prisma.residency.update({
+      where: { id },
+      data: {
+        title,
+        description,
+        price,
+        address,
+        city,
+        country,
+        image,
+        facilities,
+      },
+    });
+    res.json(updatedResidency);
+  } catch (err) {
+    throw new Error(err.message);
+  }
+});
+
+// delete document/residency by id
+export const deleteResidency = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    await prisma.residency.delete({
+      where: { id },
+    });
+    res.status(204).send();
   } catch (err) {
     throw new Error(err.message);
   }

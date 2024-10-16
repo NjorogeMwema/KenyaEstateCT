@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import connectDB from './db.js'; // Import the connectDB function
 import { userRoute } from './routes/userRoute.js';
-import { residencyRoute } from './routes/residencyRoute.js';
+import residencyRoute from './routes/residencyRoute.js';
 
 dotenv.config();
 
