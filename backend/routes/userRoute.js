@@ -8,6 +8,7 @@ import {
   toFav,
 } from "../controllers/userCntrl.js";
 import jwtCheck from "../config/auth0Config.js";
+import { PrismaClient } from '@prisma/client';
 const router = express.Router();
 
 router.post("/register", jwtCheck, createUser);

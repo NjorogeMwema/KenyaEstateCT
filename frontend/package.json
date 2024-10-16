@@ -16,7 +16,7 @@
     "@mantine/dates": "^7.10.0",
     "@mantine/form": "^7.10.0",
     "@mantine/hooks": "^7.10.0",
-    "axios": "^1.7.2",
+    "axios": "^1.7.7",
     "dayjs": "^1.11.11",
     "esri-leaflet-geocoder": "^2.3.3",
     "leaflet": "^1.9.4",

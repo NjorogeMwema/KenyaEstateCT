@@ -1,4 +1,3 @@
-import React from "react";
 import countries from "world-countries";
 
 const formattedCountries = countries.map((country) => ({

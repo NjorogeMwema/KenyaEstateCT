@@ -1,7 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Box, Button, Group, NumberInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import React, { useContext } from "react";
+import { useContext } from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import UserDetailContext from "../context/UserDetailContext";
 import useProperties from "../hooks/useProperties";
 import { useMutation } from "react-query";
@@ -119,6 +120,15 @@ const Facilities = ({
       </form>
     </Box>
   );
+};
+
+// Define PropTypes for the Facilities component
+Facilities.propTypes = {
+  prevStep: PropTypes.func.isRequired,
+  propertyDetails: PropTypes.object.isRequired,
+  setPropertyDetails: PropTypes.func.isRequired,
+  setOpened: PropTypes.func.isRequired,
+  setActiveStep: PropTypes.func.isRequired,
 };
 
 export default Facilities;

@@ -1,5 +1,5 @@
 import asyncHandler from "express-async-handler";
-
+import express from "express";
 import { prisma } from "../config/prismaConfig.js";
 
 // function for creating user

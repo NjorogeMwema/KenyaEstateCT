@@ -1,4 +1,3 @@
-import React from "react";
 import { useQuery } from "react-query";
 import { getAllProperties } from "../utils/api";
 
@@ -8,6 +7,7 @@ const useProperties = () => {
     getAllProperties,
     { refetchOnWindowFocus: false }
   );
+
   return {
     data,
     isLoading,

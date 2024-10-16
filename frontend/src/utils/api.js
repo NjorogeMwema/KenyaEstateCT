@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { toast } from "react-toastify";
 
 export const api = axios.create({
-  baseURL: "https://kenyaestate-ct-backend.vercel.app/api",
+  baseURL: "https://127.0.0.1:5173",
 });
 
 export const getAllProperties = async () => {
@@ -105,8 +105,9 @@ export const toFav = async (id, email, token) => {
         },
       }
     );
-  } catch (e) {
-    throw e;
+  } catch (error) {
+    console.error('Error adding to favorites:', error);
+    // Handle the error appropriately
   }
 };
 
@@ -152,14 +153,13 @@ export const getAllBookings = async (email, token) => {
   }
 };
 
-
-
 export const createResidency = async (data, token, userEmail) => {
   // Ensure userEmail is included in the data object
   const requestData = { ...data, userEmail };
   console.log(requestData); // Log the updated data object
+
   try {
-    const res = await api.post(
+    await api.post(
       `/residency/create`,
       requestData, // Pass the updated data object as the request body
       {
@@ -169,8 +169,7 @@ export const createResidency = async (data, token, userEmail) => {
       }
     );
   } catch (error) {
-    throw error;
+    console.error('Error creating residency:', error);
+    // Handle the error appropriately
   }
 };
-
-

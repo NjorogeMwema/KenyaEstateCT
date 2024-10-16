@@ -34,24 +34,20 @@ const Bookings = () => {
 
   // console.log(data);
   return (
-    <main className="max-padd-container my-[99px]">
-      <div className="max-padd-container py-10 xl:py-22 bg-primary rounded-3xl">
+    <main className="max-pad-container my-[99px]">
+      <div className="max-pad-container py-10 xl:py-22 bg-primary rounded-3xl">
         <div className="">
           <Searchbar filter={filter} setFilter={setFilter} />
           {/* container */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-10">
             {
               // data.map((property, i) => ( <Item key={i} property={property} /> ))
-              data.filter((property)=> bookings.map((booking)=> booking.id).includes(property.id))
+              data.filter((property) => bookings.map((booking) => booking.id).includes(property.id))
                 .filter((property) => 
                   property.title.toLowerCase().includes(filter.toLowerCase()) ||
                   property.city.toLowerCase().includes(filter.toLowerCase()) ||
                   property.country.toLowerCase().includes(filter.toLowerCase())
                 )
-                .map((property, i) => (
-                  <Item key={i} property={property} />
-                )
-              )
             }
           </div>
         </div>
